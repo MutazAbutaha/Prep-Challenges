@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function encryption(s) {\n    // Write your code here\n    let str = s.split(\" \").join(\"\");\n    let len = str.length;\n    let result = \"\";\n    let column = Math.ceil(Math.sqrt(len))\n\n    for (let i = 0; i < column; i++) {\n        let start = i;\n        let tempStr = str[start];\n        while (str[start + column]) {\n            tempStr += str[start + column];\n            start += column;\n        }\n        result += tempStr + \" \";\n    }\n\n    return result;\n}\n"
             ],
             "outputs": []
         },
@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function timeInWords(h, m) {\n    let s = {\n      1: 'one',\n      2: 'two',\n      3: 'three',\n      4: 'four',\n      5: 'five',\n      6: 'six',\n      7: 'seven',\n      8: 'eight',\n      9: 'nine',\n      10: 'ten',\n      11: 'eleven',\n      12: 'twelve',\n      13: 'thirteen',\n      14: 'fourteen',\n      15: 'quarter',\n      16: 'sixteen',\n      17: 'seventeen',\n      18: 'eightteen',\n      19: 'nineteen',\n      20: 'twenty',\n      30: 'half',\n    }\n    if (m === 15 || m === 30) return `${s[m]} past ${s[h]}`\n    else if (m === 1) return `${s[m]} minute past ${s[h]}`\n    else if (m === 0) return `${s[h]} o' clock`\n    else if (m <= 20) return `${s[m]} minutes past ${s[h]}`\n    else if (m < 30) return `${s[20]} ${s[m - 20]} minutes past ${s[h]}`\n    else if (m === 45) return `${s[15]} to ${s[h + 1]}`\n    else if (m === 59) return `${s[1]} minute to ${s[h + 1]}`\n    else if (m < 40) return `${s[20]} ${s[40 - m]} minutes to ${s[h + 1]}`\n    else if (m < 60) return `${s[60 - m]} minutes to ${s[h + 1]}`\n  }"
             ],
             "outputs": []
         }
